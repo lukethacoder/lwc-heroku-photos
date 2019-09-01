@@ -1,7 +1,4 @@
-import { buildCustomElementConstructor, register } from 'lwc';
-import { registerWireService } from '@lwc/wire-service';
-import UiApp from 'ui/app';
+import { buildCustomElementConstructor } from 'lwc';
+import LsdApp from 'lsd/app';
 
-registerWireService(register);
-
-customElements.define('ui-app', buildCustomElementConstructor(UiApp));
+customElements.define('lsd-app', buildCustomElementConstructor(LsdApp));

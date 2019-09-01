@@ -1,16 +1,11 @@
 {
-    "name": "lwc-recipes-oss",
-    "version": "0.2.0",
-    "author": "Salesforce Developer Evangelism",
-    "bugs": "https://github.com/trailheadapps/lwc-recipes-oss/issues",
+    "name": "lwc-heroku-photos",
+    "version": "0.0.0",
+    "author": "Luke Secomb",
+    "bugs": "https://github.com/Luke Secomb/lwc-heroku-photos/issues",
     "dependencies": {
-        "chart.js": "^2.8.0",
-        "d3": "^5.9.2",
-        "lwc-services": "^1.2.0",
-        "moment": "^2.24.0",
-        "pg": "^7.12.1"
+        "lwc-services": "^1"
     },
-    "description": "Lightning Web Components Recipes Open Source",
     "devDependencies": {
         "husky": "^2.3",
         "lint-staged": "^8.1.5"
@@ -18,7 +13,7 @@
     "engines": {
         "node": ">=10.0.0"
     },
-    "homepage": "https://github.com/trailheadapps/lwc-recipes-oss",
+    "homepage": "https://github.com/Luke Secomb/lwc-heroku-photos",
     "husky": {
         "hooks": {
             "pre-commit": "lint-staged"
@@ -27,9 +22,9 @@
     "keywords": [
         "lwc"
     ],
-    "license": "CC0-1.0",
+    "license": "MIT",
     "lint-staged": {
-        "**/*.{html,js,json,yaml,yml,md}": [
+        "**/*.{css,html,js,json,md,yaml,yml}": [
             "prettier --write"
         ],
         "**/modules/**/*.js": [
@@ -39,9 +34,9 @@
             "git add"
         ]
     },
-    "repository": "trailheadapps/lwc-recipes-oss",
+    "repository": "Luke Secomb/lwc-heroku-photos",
     "scripts": {
-        "build": "lwc-services build --mode production",
+        "build": "lwc-services build -m production",
         "build:development": "lwc-services build",
         "lint": "eslint ./src/**/*.js",
         "prettier": "prettier --write '**/*.{css,html,js,json,md,yaml,yml}'",
@@ -51,7 +46,6 @@
         "test:unit:coverage": "lwc-services test --coverage",
         "test:unit:debug": "lwc-services test --debug",
         "test:unit:watch": "lwc-services test --watch",
-        "watch": "lwc-services watch",
-        "watch:production": "lwc-services watch --mode=production"
+        "watch": "lwc-services watch"
     }
 }

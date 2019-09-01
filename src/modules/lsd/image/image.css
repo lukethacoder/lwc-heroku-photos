@@ -1,0 +1,15 @@
+.lsd-image {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    max-height: 240px;
+    display: flex;
+    align-items: center;
+}
+
+.lsd-image img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}

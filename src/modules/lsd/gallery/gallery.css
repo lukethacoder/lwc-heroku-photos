@@ -1,0 +1,24 @@
+.lsd-gallery__wrapper {
+    max-width: calc(100vw - (2 * 10px));
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-flow: dense;
+    grid-auto-rows: minmax(calc(((100vw - 20px - 10px) / 2) * (9 / 16)), auto);
+    /* // If the content is taller then the box will grow to fit. This is only going to work if the column value is 1fr */
+    grid-gap: 10px;
+    margin: 10px;
+    padding: 0;
+}
+@media (min-width: 60em) {
+    .lsd-gallery__wrapper {
+        margin: 10px auto;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-auto-rows: minmax(calc(((100vw - 40px - 20px) / 2)), auto);
+    }
+}
+.lsd-gallery__wrapper li {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

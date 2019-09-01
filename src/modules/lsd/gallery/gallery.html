@@ -1,0 +1,9 @@
+<template>
+    <!-- for each image - render a new image component -->
+    <h3>Gallery</h3>
+    <ul class="lsd-gallery__wrapper">
+        <li for:each={images} for:item="image" key={image.id}>
+            <lsd-image image={image}></lsd-image>
+        </li>
+    </ul>
+</template>
