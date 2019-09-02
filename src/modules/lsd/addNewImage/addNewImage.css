@@ -1,0 +1,20 @@
+h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+.lsd-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 0 0 64px;
+}
+.lsd-input {
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+}
+.lsd-input input {
+    padding: 8px 12px;
+    width: auto;
+}

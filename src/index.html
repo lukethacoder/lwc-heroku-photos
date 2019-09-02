@@ -4,8 +4,23 @@
         <meta charset="utf-8" />
         <title>lwc / heroku / photos</title>
         <style>
+            * {
+                box-sizing: border-box;
+            }
+            html,
             body {
-                font-family: Arial, Helvetica, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                min-height: 100vh;
+                height: 100%;
+                overflow-x: hidden;
+                font-family: 'Roboto', Arial, Helvetica, sans-serif;
+                float: left;
+                width: 100%;
+                font-weight: 300;
+                background: linear-gradient(135deg, #141414 0%, #2c2c2c 100%);
             }
             #main {
                 min-height: 65px;
@@ -14,6 +29,10 @@
         </style>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="shortcut icon" href="/resources/favicon.ico" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:300,500&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
         <lsd-app></lsd-app>

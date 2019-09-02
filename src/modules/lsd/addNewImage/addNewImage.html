@@ -1,0 +1,54 @@
+<template>
+    <h2>Add New Image</h2>
+    <div class="lsd-form">
+        <div class="lsd-input">
+            <label>Name</label>
+            <input
+                type="text"
+                name="name"
+                value={name}
+                onchange={handleFieldChange}
+            />
+        </div>
+        <div class="lsd-input">
+            <label>File URL</label>
+            <input
+                type="url"
+                name="file_url"
+                value={file_url}
+                onchange={handleFieldChange}
+            />
+        </div>
+        <div class="lsd-input">
+            <label>Location Longitude Latitude</label>
+            <input
+                type="number"
+                name="lon"
+                value={lon}
+                onchange={handleFieldChange}
+            />
+        </div>
+        <div class="lsd-input">
+            <label>Location Latitude</label>
+            <input
+                type="number"
+                name="lat"
+                value={lat}
+                onchange={handleFieldChange}
+            />
+        </div>
+        <div class="lsd-input">
+            <label>Date Taken</label>
+            <input
+                type="date"
+                name="date_taken"
+                value={date_taken}
+                onchange={handleFieldChange}
+            />
+        </div>
+        <div class="lsd-input">
+            <label style="visibility: hidden;">Submit Button</label>
+            <button onclick={saveImage}>Save</button>
+        </div>
+    </div>
+</template>

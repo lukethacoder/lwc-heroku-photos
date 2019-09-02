@@ -1,0 +1,20 @@
+.lsd-footer__links {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 12px 0;
+}
+.lsd-footer__links_single {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #ffc87f;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.lsd-footer__links_single:hover {
+    color: #f1f1f1;
+}

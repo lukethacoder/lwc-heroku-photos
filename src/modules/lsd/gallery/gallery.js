@@ -1,23 +1,47 @@
 import { LightningElement, track } from 'lwc';
-
-const staticImages = [
-    {
-        id: 'Hello',
-        url:
-            'https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80'
-    },
-    {
-        id: 'Bonjour',
-        url:
-            'https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80'
-    },
-    {
-        id: 'Ciao',
-        url:
-            'https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80'
-    }
-];
+import { client, ALL_PHOTOS_QUERY } from 'lsd/api';
 
 export default class Image extends LightningElement {
-    @track images = staticImages;
+    // @track images = staticImages;
+    @track error = false;
+    @track loading = false;
+    subscription;
+    @track images = [];
+
+    async connectedCallback() {
+        const queryOptions = {
+            query: ALL_PHOTOS_QUERY
+        };
+        const observable = client.watchQuery(queryOptions);
+        this.subscription = observable.subscribe(
+            this.observableNextCallback,
+            this.observableErrorCallback,
+            this.observableCompleteCallback
+        );
+        this.loading = true;
+        try {
+            await client.query(queryOptions);
+            this.loading = false;
+        } catch (err) {
+            this.loading = false;
+        }
+    }
+
+    disconnectedCallback() {
+        this.subscription.unsubscribe();
+    }
+
+    observableNextCallback = res => {
+        this.photos = res.data.salesforce_photo__c;
+        this.error = false;
+    };
+
+    observableErrorCallback = err => {
+        if (!err) return;
+        this.error = true;
+    };
+
+    observableCompleteCallback = () => {
+        window.console.log('Finished');
+    };
 }
