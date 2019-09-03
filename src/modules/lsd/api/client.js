@@ -1,6 +1,7 @@
-import ApolloClient from 'apollo-boost';
+import ApolloClient, { InMemoryCache } from 'apollo-boost';
 
-const URI = 'https://hasura-lwc-test.herokuapp.com/v1/graphql';
+const URI = 'https://hasura-lwc-photos-db.herokuapp.com/v1/graphql';
 export const client = new ApolloClient({
-    uri: URI
+    uri: URI,
+    cache: new InMemoryCache()
 });

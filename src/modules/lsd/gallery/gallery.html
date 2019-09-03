@@ -1,19 +1,19 @@
 <template>
     <!-- for each image - render a new image component -->
     <h1>Heroku LWC Photos Example</h1>
-    <ul class="lsd-gallery__wrapper">
-        <template if:true={loading}>
-            <li>Loading...</li>
+    <template if:true={loading}>
+        <h4>Loading...</h4>
+    </template>
+    <template if:false={loading}>
+        <template if:true={error}>
+            <h4>Error - someone messed up</h4>
         </template>
-        <template if:false={loading}>
-            <template if:true={error}>
-                <li>Error - someone messed up</li>
-            </template>
-            <template if:false={error}>
+        <template if:false={error}>
+            <ul class="lsd-gallery__wrapper">
                 <li for:each={photos} for:item="image" key={image.sfid}>
                     <lsd-image image={image}></lsd-image>
                 </li>
-            </template>
+            </ul>
         </template>
-    </ul>
+    </template>
 </template>

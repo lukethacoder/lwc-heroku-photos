@@ -3,6 +3,10 @@ h1 {
     font-family: 'Playfair Display', serif;
     color: #ffc87f;
 }
+h4 {
+    text-align: center;
+    color: #ffc87f;
+}
 .lsd-gallery__wrapper {
     /* max-width: calc(100vw - (2 * 10px)); */
     max-width: 1080px;
@@ -35,4 +39,5 @@ h1 {
     display: flex;
     justify-content: center;
     max-height: 240px;
+    color: #ffc87f;
 }
