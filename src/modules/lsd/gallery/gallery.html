@@ -10,7 +10,7 @@
         </template>
         <template if:false={error}>
             <ul class="lsd-gallery__wrapper">
-                <li for:each={photos} for:item="image" key={image.sfid}>
+                <li for:each={photos} for:item="image" key={image.heroku_id__c}>
                     <lsd-image image={image}></lsd-image>
                 </li>
             </ul>
